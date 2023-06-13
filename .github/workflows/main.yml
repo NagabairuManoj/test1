@@ -14,14 +14,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-#       - name: Trigger Jenkins Pipeline
-#         env:
-#           JENKINS_URL: ${{ vars.JENKINS_URL }}
-#           JENKINS_JOB: ${{ vars.JENKINS_JOB }}
-#           JENKINS_TOKEN: ${{ vars.JENKINS_TOKEN }}
-#           JENKINS_USERNAME: ${{ vars.JENKINS_USERNAME }}
-#         run: |
-#           curl -X POST -u "${JENKINS_USERNAME}:${JENKINS_TOKEN}" "${JENKINS_URL}/job/${JENKINS_JOB}/build" 
+      - name: Trigger Jenkins Pipeline
+        env:
+          JENKINS_URL: ${{ vars.JENKINS_URL }}
+          JENKINS_JOB: ${{ vars.JENKINS_JOB }}
+          JENKINS_TOKEN: ${{ vars.JENKINS_TOKEN }}
+          JENKINS_USERNAME: ${{ vars.JENKINS_USERNAME }}
+        run: |
+          curl -X POST -u "${JENKINS_USERNAME}:${JENKINS_TOKEN}" "${JENKINS_URL}/job/${JENKINS_JOB}/build" 
       - name: Wait for Jenkins Pipeline
         env:
           JENKINS_URL: ${{ vars.JENKINS_URL }}
