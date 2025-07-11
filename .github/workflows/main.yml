@@ -17,6 +17,7 @@ jobs:
 #       - name: Trigger Jenkins Pipeline
 #         env:
 #           JENKINS_URL: ${{ vars.JENKINS_URL }}
+#testing
 #           JENKINS_JOB: ${{ vars.JENKINS_JOB }}
 #           JENKINS_TOKEN: ${{ vars.JENKINS_TOKEN }}
 #           JENKINS_USERNAME: ${{ vars.JENKINS_USERNAME }}
