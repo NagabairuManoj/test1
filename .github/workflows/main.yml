@@ -8,7 +8,6 @@ on:
 jobs:
   jenkins-pipeline:
     runs-on: ubuntu-latest
-    environment: env1
 
     steps:
       - name: Checkout Repository
@@ -23,7 +22,10 @@ jobs:
 #           JENKINS_USERNAME: ${{ vars.JENKINS_USERNAME }}
 #         run: |
 #           curl -X POST -u "${JENKINS_USERNAME}:${JENKINS_TOKEN}" "${JENKINS_URL}/job/${JENKINS_JOB}/build" 
+      - name: checking
+        run: "echo hi"
       - name: Wait for Jenkins Pipeline
+        environment: env1
         env:
           JENKINS_URL: ${{ vars.JENKINS_URL }}
           JENKINS_JOB: ${{ vars.JENKINS_JOB }}
